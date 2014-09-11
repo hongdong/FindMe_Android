@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg">
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+		android:layout_height="@dimen/actionbar_height"
+		android:background="@drawable/actionbar_bg">
+		<Button 
+		    android:id="@+id/btn_back_person_data"
+		    style="@style/bar_back"/>
+		<TextView 
+	    	android:text="@string/person_data"
+	    	style="@style/bar_text"/>
+	</RelativeLayout>
+	<cn.ifanmi.findme.ui.view.SuperScrollView 
+	    android:id="@+id/sscroll_pd"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:orientation="vertical">
+			<include layout="@layout/person_data_top"/>
+			<include layout="@layout/person_data_bottom"/>
+		</LinearLayout>
+	</cn.ifanmi.findme.ui.view.SuperScrollView>
+</LinearLayout>

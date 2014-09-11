@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="db_create_sql">    
+        <item >
+            create table if not exists friend
+            (_id integer primary key autoincrement, id, photo, header, nickname, signature, urmCount)
+        </item>
+        <item >
+            create table if not exists status
+            (_id integer primary key autoincrement, id, personId, content, photos, releaseTime, 
+            readCount, praiseCount, messageCount, isOfficial, isTop)
+        </item>
+        <item >
+            create table if not exists person
+            (_id integer primary key autoincrement, id, photo, nickname, signature, collegeName, 
+            deptName, grade, sex, name, cl, album, isAuth)
+        </item>
+    </string-array>
+    
+    <string-array name="db_drop_sql">
+        <item >drop table friend</item>
+        <item >drop table status</item>
+        <item >drop table person</item>
+    </string-array>
+</resources>

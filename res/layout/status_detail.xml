@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout 
+        android:id="@+id/layout_sd_top"
+	    android:layout_width="match_parent"
+		android:layout_height="@dimen/actionbar_height"
+		android:background="@drawable/actionbar_bg">
+		<Button 
+		    android:id="@+id/btn_back_status_detail"
+		    style="@style/bar_back"/>
+		<TextView 
+	    	android:text="@string/detail"
+	    	style="@style/bar_text"/>
+	</RelativeLayout>
+    <cn.ifanmi.findme.ui.view.ptor.PullToRefreshScrollView 
+        android:id="@+id/pscroll_status_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_sd_bottom"
+        android:layout_below="@id/layout_sd_top"
+        android:clickable="true"/>
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:layout_alignParentBottom="true"
+	    android:id="@id/layout_sd_bottom">
+	    <include layout="@layout/status_detail_bottom"/>
+	    <include layout="@layout/status_detail_post_message"/>
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_sd_content">
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" 
+	    android:padding="5dp"
+	    android:background="@null">
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="@drawable/layout_bg_ss"> 
+		    <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:layout_margin="10dp">
+		        <include layout="@layout/list_status_item_top_base"/>  
+		    </LinearLayout>
+		    <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:layout_marginBottom="10dp"
+		        android:id="@+id/layout_sdc_op">
+		        <include layout="@layout/list_status_item_top_op"/>  
+		    </LinearLayout>
+	        <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:layout_marginBottom="10dp"
+		        android:id="@+id/layout_sdc_mp">
+		        <include layout="@layout/list_status_item_top_mp"/>  
+		    </LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+    <cn.ifanmi.findme.ui.view.MyListView 
+        android:id="@+id/mlist_status_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/white_divider"
+		android:dividerHeight="0.5dp"/>
+</LinearLayout>

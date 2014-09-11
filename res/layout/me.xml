@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg">
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+		android:layout_height="@dimen/actionbar_height"
+		android:background="@drawable/actionbar_bg">
+		<ImageView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerInParent="true"
+		    android:src="@drawable/img_me"
+		    android:contentDescription="@string/hello_world"/>
+	</RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp">
+		<include layout="@layout/me_header"/>
+		<include layout="@layout/me_album"/>
+		<cn.ifanmi.findme.ui.view.MyListView 
+	        android:id="@+id/list_me"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:cacheColorHint="#00000000"
+	        android:divider="@color/white_divider"
+	        android:dividerHeight="1dp"
+	        android:background="@drawable/layout_bg_ss"/>
+	    <include layout="@layout/me_setting"/>
+	</LinearLayout>
+</LinearLayout>

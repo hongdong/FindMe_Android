@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg">
+    <RelativeLayout 
+        android:id="@+id/layout_chat_bar"
+	    android:layout_width="match_parent"
+		android:layout_height="@dimen/actionbar_height"
+		android:background="@drawable/actionbar_bg">
+		<Button 
+		    android:id="@+id/btn_back_chat"
+		    style="@style/bar_back"/>
+		<TextView 
+		    android:id="@+id/txt_bar_chat"
+	    	style="@style/bar_text"/>
+		<Button 
+		    android:id="@+id/btn_delete_chat"
+		    style="@style/bar_delete"/>
+	</RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:layout_below="@id/layout_chat_bar"
+	    android:layout_above="@+id/layout_chat_bottom">
+	    <include layout="@layout/chat_center"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:id="@id/layout_chat_bottom"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:layout_alignParentBottom="true"
+	    android:paddingBottom="2dp"
+    	android:paddingTop="2dp">
+	    <include layout="@layout/divider_gray"/>
+	    <include layout="@layout/chat_bottom_post_message"/>
+	    <include layout="@layout/chat_bottom_more"/>
+	</LinearLayout>
+</RelativeLayout>

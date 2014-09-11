@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/layout_bg_sc">
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="10dp"
+	    android:background="@null">
+	    <RelativeLayout
+	        android:id="@+id/layout_info_photo"
+	        android:layout_width="55dp"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true">
+	        <cn.ifanmi.findme.ui.view.CircleImageView
+		        android:id="@+id/img_info_photo"
+			    android:layout_width="50dp"
+			    android:layout_height="50dp"
+			    android:layout_centerVertical="true"
+			    android:scaleType="fitXY"
+			    android:contentDescription="@string/hello_world"/>
+	        <TextView
+	            android:id="@+id/txt_info_urm_count"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:background="@drawable/red_circle"
+	            android:gravity="center"
+	            android:text="@string/urm_count"
+	            android:textColor="@color/white"
+	            android:textSize="12sp" />
+	    </RelativeLayout>
+	    <TextView
+	        android:id="@+id/txt_info_nickname"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/layout_info_photo"
+	        android:layout_marginLeft="5dp"
+	        android:textColor="#000"
+	        android:textSize="16sp" />
+	    <TextView
+	        android:id="@+id/txt_info_time"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:textColor="#888888"
+	        android:textSize="13sp" />
+	    <ImageView
+	        android:id="@+id/img_info_state"
+	        android:layout_width="20dp"
+	        android:layout_height="20dp"
+	        android:layout_toRightOf="@id/layout_info_photo"
+	        android:layout_marginLeft="5dp"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/msg_state_fail_resend"
+	        android:contentDescription="@string/hello_world"
+	        android:visibility="gone" />
+	    <TextView
+	        android:id="@+id/txt_info_last_message"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toLeftOf="@id/txt_info_time"
+	        android:layout_toRightOf="@id/img_info_state"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_alignParentBottom="true"
+	        android:singleLine="true"
+	        android:ellipsize="end"
+	        android:textColor="#888888"
+	        android:textSize="14sp" />
+	</RelativeLayout>
+</LinearLayout>

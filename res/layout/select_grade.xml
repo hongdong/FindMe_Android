@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg">
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+		android:layout_height="@dimen/actionbar_height"
+		android:background="@drawable/actionbar_bg">
+		<Button 
+	        android:id="@+id/btn_back_select_grade"
+	        style="@style/bar_back"/>
+		<TextView 
+	    	android:text="@string/select_grade"
+	    	style="@style/bar_text"/>
+	</RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+	    <ListView 
+	        android:id="@+id/list_select_grade"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dp"
+	        android:divider="@color/white_divider"
+    		android:dividerHeight="1dp"
+    		android:cacheColorHint="#00000000"
+	        android:background="@drawable/layout_bg_ss">
+	    </ListView>
+    </LinearLayout>
+</LinearLayout>

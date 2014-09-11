@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.ifanmi.findme"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+    
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    
+    <!-- Required 自定义用来收发消息的相关权限 -->               
+    <permission
+        android:name="cn.ifanmi.findme.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="cn.ifanmi.findme.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>  
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" /> 
+  	<uses-permission android:name="android.permission.INTERNET" /> 
+  	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> 
+  	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
+  	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> 
+  	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+  	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+  	<uses-permission android:name="android.permission.READ_PHONE_STATE" /> 
+  	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" /> 
+  	<uses-permission android:name="android.permission.GET_ACCOUNTS" /> 
+  	<permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+  	
+  	<supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application
+        android:name=".logic.FanApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/img_app"
+        android:label="@string/app_name"
+        android:theme="@style/NoTitleBar" >
+        <activity
+            android:name="cn.ifanmi.findme.ui.activity.LogoActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.GuideActivity"/>
+        <activity android:name=".ui.activity.AuthoActivity"/>
+        <activity android:name=".ui.activity.LoginActivity"/>
+        <activity android:name=".ui.activity.SignupActivity"/>
+        
+        <activity
+			android:name="cn.smssdk.SMSSDKUIShell"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+			android:windowSoftInputMode="stateHidden|adjustResize" />
+        
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+			<!--
+			如果集成QQ分享，或者使用QQ客户端来进行QQ空间的
+			分享，须要在此处添加一个对ACTION_VIEW事件的过滤器，
+			其中的scheme是“tencent”前缀再开发者应用的加上appId。
+			如果此过滤器不设置，则分享结束以后不能得到正确的回调
+			-->
+		    <intent-filter>
+		        <data android:scheme="tencent101073559" />
+		        <action android:name="android.intent.action.VIEW" />
+		        <category android:name="android.intent.category.DEFAULT" />
+		        <category android:name="android.intent.category.BROWSABLE" />
+		    </intent-filter>
+        </activity>
+        <!--微信分享回调 -->
+		<activity
+		  android:name=".wxapi.WXEntryActivity"
+		  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		  android:configChanges="keyboardHidden|orientation|screenSize"
+		  android:exported="true"
+		  android:screenOrientation="portrait" />
+        
+        <activity android:name=".ui.activity.SelectCollegeActivity" 
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".ui.activity.SelectDeptActivity"/>
+        <activity android:name=".ui.activity.SelectGradeActivity"/> 
+        <activity android:name=".ui.activity.SelectCDGActivity"/> 
+        <activity android:name=".ui.activity.CompleteUDActivity"/> 
+        <activity android:name=".ui.activity.SelectClActivity"/> 
+        <activity android:name=".ui.activity.HomePageActivity" 
+            android:launchMode="singleTask"/>
+        
+        <activity android:name=".ui.activity.FindActivity"/> 
+        <activity android:name=".ui.activity.InfoActivity"/> 
+        <activity android:name=".ui.activity.FriendActivity"/> 
+        <activity android:name=".ui.activity.GroupActivity"/> 
+        <activity android:name=".ui.activity.MeActivity"/> 
+        
+        <activity android:name=".ui.activity.PersonDataActivity"/> 
+        <activity android:name=".ui.activity.FindFansActivity" 
+            android:launchMode="singleTask"/> 
+        <activity android:name=".ui.activity.FindFDActivity"/> 
+        
+        <activity android:name=".ui.activity.InfoSettingActivity"/> 
+        
+        <activity android:name=".ui.activity.ChatActivity"
+            android:windowSoftInputMode="stateHidden"/> 
+        <activity android:name=".em.AlertDialogActivity"
+            android:theme="@style/MyDialogStyle"/> 
+        <activity android:name=".em.ContextMenuActivity"
+            android:theme="@style/MyDialogStyle"/> 
+        <activity android:name=".em.BaiduMapActivity"/> 
+        <activity android:name=".em.ShowBigImageActivity"/>
+        <activity android:name=".em.ImageGridActivity"/>  
+        <activity android:name=".em.RecorderVideoActivity"/>  
+        <activity android:name=".em.ShowVideoActivity"/>  
+        <activity android:name=".em.ShowNormalFileActivity"/>  
+        
+        <activity android:name=".ui.activity.StatusInfoActivity"
+            android:launchMode="singleTask"/> 
+        <activity android:name=".ui.activity.StatusDetailActivity"/>
+        <activity android:name=".photoCache.NetPhotosActivity"
+            android:theme="@style/Photos"/>
+        <activity android:name=".photoCache.LocalPhotosActivity"
+            android:theme="@style/Photos"/>
+        <activity android:name=".ui.activity.WriteStatusActivity"/> 
+        <activity android:name=".photoCache.SelectPhotosActivity"/> 
+        <activity android:name=".photoCache.PhotosActivity"/> 
+        
+        <activity android:name=".ui.activity.AuthActivity"/>
+        <activity android:name=".ui.activity.MyDataActivity"/>
+        <activity android:name=".ui.activity.UpdateNicknameActivity"
+            android:windowSoftInputMode="stateVisible"/>
+        <activity android:name=".ui.activity.UpdateSignatureActivity"
+            android:windowSoftInputMode="stateVisible"/>
+        <activity android:name=".ui.activity.MyAlbumActivity"/>
+        <activity android:name=".ui.activity.MyAlbumPhotosActivity"
+            android:theme="@style/Photos"/>
+        <activity android:name=".ui.activity.MyAlbumAddActivity"/>
+        <activity android:name=".ui.activity.SettingActivity"/> 
+        <activity android:name=".ui.activity.SettingSIActivity"/> 
+        <activity android:name=".ui.activity.SettingVFActivity"/> 
+        <activity android:name=".ui.activity.SettingAUActivity"/> 
+        <activity android:name=".ui.activity.SettingUFActivity"
+            android:windowSoftInputMode="stateVisible"/> 
+        
+        <service android:name=".logic.IfanService"></service>
+        
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="cn.ifanmi.findme" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   
+                <category android:name="cn.ifanmi.findme" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+             <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+        <receiver
+            android:name=".receiver.JPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> 
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />  
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> 
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> 
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> 
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" /> 
+                <category android:name="cn.ifanmi.findme" />
+            </intent-filter>
+        </receiver> 
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="f42fa5c9e7c129516086af5a" /> 
+        
+        <!--  设置环信SDK的appkey -->
+		<meta-data android:name="EASEMOB_APPKEY"  android:value="fjhongdong#findme" />
+		<service android:name="com.easemob.chat.EMChatService" />
+		
+		<service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+		
+    </application>
+
+</manifest>

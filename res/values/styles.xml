@@ -1,0 +1,162 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+    
+    <style name="AnimPhotos" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/head_in</item>
+        <item name="android:windowExitAnimation">@anim/head_out</item>
+    </style>
+    
+    <!-- ActionBar顶部左边的返回按钮 -->
+    <style name="bar_back">
+        <item name="android:layout_width">@dimen/actionbar_height</item>
+        <item name="android:layout_height">@dimen/actionbar_height</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/btn_back_bg</item>
+    </style>
+    
+    <!-- ActionBar顶部中间的文字 -->
+    <style name="bar_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    
+    <!-- ActionBar顶部右边按钮 -->
+    <style name="bar_right">
+        <item name="android:layout_width">@dimen/actionbar_height</item>
+        <item name="android:layout_height">@dimen/actionbar_height</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+    
+    <!-- ActionBar顶部右边按钮（只显示文字，且填满） -->
+    <style name="bar_right_text_full">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/actionbar_height</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/bar_right_btn_text</item>
+        <item name="android:background">@null</item>
+    </style>
+    
+    <style name="bar_right_complete" parent="@style/bar_right_text_full">
+        <item name="android:text">@string/complete</item>
+    </style>
+    
+    <!-- ActionBar顶部右边的确认按钮 -->
+    <style name="bar_ok" parent="@style/bar_right">
+        <item name="android:background">@drawable/btn_ok_bg</item>
+    </style>
+    
+    <!-- ActionBar顶部右边的添加按钮 -->
+    <style name="bar_add" parent="@style/bar_right">
+        <item name="android:background">@drawable/btn_add_bg</item>
+    </style>
+    
+    <!-- ActionBar顶部右边的分享按钮 -->
+    <style name="bar_share" parent="@style/bar_right">
+        <item name="android:background">@drawable/btn_share_bg</item>
+    </style>
+    
+    <!-- ActionBar顶部右边的写按钮 -->
+    <style name="bar_write" parent="@style/bar_right">
+        <item name="android:background">@drawable/btn_add_bg</item>
+    </style>
+    
+     <!-- ActionBar顶部右边的删除按钮 -->
+    <style name="bar_delete" parent="@style/bar_right">
+        <item name="android:background">@drawable/btn_delete_bg</item>
+    </style>
+    
+    <!-- 登录按钮style -->
+    <style name="login_btn" parent="@android:attr/buttonBarButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/login_btn_bg</item>
+    </style>
+    
+    <style name="rg_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/no_selector</item>
+    </style>
+    
+    <style name="hp_rg_btn" parent="@style/rg_btn">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/hp_btn_text</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:drawablePadding">2dp</item>
+    </style>
+    
+    <style name="hp_btn_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    
+    <style name="hp_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/hp_btn_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@null</item>
+    </style>
+    
+    <style name="hp_btn_text">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">@string/urm_count</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/hp_btn_urm_bg</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    
+    <style name="chat_content_date_style">
+        <item name="android:minHeight">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">#bfbfbf</item>
+    </style>
+
+    <style name="chat_text_name_style">
+        <item name="android:textColor">#818181</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="chat_text_date_style">
+        <item name="android:padding">2dp</item>
+        <item name="android:paddingTop">2dip</item>
+        <item name="android:paddingBottom">2dip</item>
+        <item name="android:paddingLeft">12dip</item>
+        <item name="android:paddingRight">12dip</item>
+        <item name="android:textColor">@color/silver</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@drawable/timestampe_bg</item>
+    </style>
+
+</resources>

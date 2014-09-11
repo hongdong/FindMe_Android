@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg">
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+		android:layout_height="@dimen/actionbar_height"
+		android:background="@drawable/actionbar_bg">
+		<Button 
+		    android:id="@+id/btn_back_auth"
+		    style="@style/bar_back"/>
+		<TextView 
+	    	android:text="@string/auth"
+	    	style="@style/bar_text"/>
+	</RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:id="@+id/layout_auth_content"
+	    android:visibility="gone">
+		<include layout="@layout/auth_csp"/>
+		<include layout="@layout/auth_captcha"/>
+	    <Button 
+	        android:id="@+id/btn_auth"
+	        android:layout_width="match_parent" 
+	        android:layout_height="40dp"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:text="@string/click_auth"
+	        android:textSize="18sp"
+	        android:textColor="@color/white"
+	        android:background="@drawable/login_btn_bg"/>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="@drawable/list_item_bg_c">
+	<ImageView
+	    android:id="@+id/img_sg_photos"
+		android:layout_width="80dp"
+		android:layout_height="80dp"
+		android:scaleType="centerCrop"
+		android:contentDescription="@string/hello_world"/>
+</RelativeLayout>
